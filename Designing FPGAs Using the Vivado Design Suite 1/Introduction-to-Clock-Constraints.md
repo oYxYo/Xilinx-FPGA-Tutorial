@@ -47,3 +47,25 @@ report_clocks
 ```
 
 ## NOTES
+**clock skew** 时钟偏移
+- positive skew: source比destination早接收到clock
+- negative skew: 反之<br>
+会导致寄存器不工作<br>
+if clock skew is not addressed in a design, it can result in setup and hold violations.<br>
+clock pessimism is removed during the calculation of clock skew.<br>
+
+**static timing path** is
+- starts at a clocked element like a flip-flop, block RAM, DSP cell, etc.
+- propagates through any number of combinatorial elements like LUTs, MUXes, and the nets that interconnect them.<br>
+- ends at a clocked element.<br>
+
+**stactic timing analysis** is a simulation method for validating the timing performance of a circuit, without simulating the full circuit but by checking all possible paths for timing violations under worst-case conditions.<br>
+在vivado中，static timing engine是基于"basic elements (BELs)"的。与之相对应的，ISE软件是基于slice level的。<br>
+
+**setup check on clock**
+```
+slack = PERIOD + destination_clock_delay - (source_clock_delay + data_path_delay) - clock_uncertainty
+
+if (slack > 0) pass;
+if (slack < 0) failure;
+```
