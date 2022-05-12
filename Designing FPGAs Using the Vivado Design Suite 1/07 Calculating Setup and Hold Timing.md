@@ -1,4 +1,4 @@
-
+![](https://v6.netexam.com/Courses6/Calculating%20Setup%20and%20Hold%20Timing-202201280715380112/mobile/5rVWdywsDv4_80_P_0_0_1636_767_DX1636_DY835_CX1636_CY835.png)
 data valid window = clock period - setup window - hold window<br>
 start of data valid window = T_launch + T_hold<br>
 end of data valid window = T_launch + T_period - T_setup<br>
