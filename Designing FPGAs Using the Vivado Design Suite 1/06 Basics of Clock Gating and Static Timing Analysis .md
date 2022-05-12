@@ -3,9 +3,8 @@
 我们都知道DFF是靠时钟沿来采样输入信号，如果CE端为高电平1，则时钟有效，输入D会在时钟跳变时传输到Q端，而如果CE端为低电平0，则时钟无效，无论输入时钟如何跳变，输出端Q始终保持之前的值。<br>
 
 ## when to use clock gating
-### 1. multi-cycle clock relationships exist between two regions
-
-### 2. modules are not active
+1. multi-cycle clock relationships exist between two regions
+2. modules are not active
 
 ## how to control the clocks and implement clock gating
 ### 1. use local clock enables on the individual promitives (individual clock enables)
